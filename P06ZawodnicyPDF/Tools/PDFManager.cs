@@ -38,7 +38,7 @@ namespace P02ZawodnicyNoweOkna.Tools
             // Draw the text
             for (int i = 0; i < zawodnicy.Length; i++)
             {
-                gfx.DrawString(zawodnicy[i].ImieNazwisko,font, XBrushes.Aqua,20, 50+ 25*i)
+                gfx.DrawString(zawodnicy[i].ImieNazwisko, font, XBrushes.Aqua, 20, 50 + 25 * i);
             }
 
             // Save the document...

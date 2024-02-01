@@ -1,4 +1,5 @@
-﻿using P04Zawodnicy.Shared.Domain;
+﻿using P02ZawodnicyNoweOkna.Tools;
+using P04Zawodnicy.Shared.Domain;
 using P04Zawodnicy.Shared.Services;
 using System;
 using System.Collections.Generic;
@@ -71,7 +72,16 @@ namespace P06ZawodnicyPDF
 
         private void btnGenerujPDF_Click(object sender, EventArgs e)
         {
+            Zawodnik[] zawodnicy = (Zawodnik[])lbDane.DataSource;
 
+            if (zawodnicy == null || zawodnicy.Length ==0)
+            {
+                MessageBox.Show("Pusty zbiór danych", "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            PDFManager pm = new PDFManager(@"c:\dane\zawodnicy.pdf");
+            pm.WygenerujPDF(zawodnicy);
         }
     }
 }
