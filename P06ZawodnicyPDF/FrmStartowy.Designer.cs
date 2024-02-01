@@ -35,6 +35,7 @@
             this.btnSzczegoly = new System.Windows.Forms.Button();
             this.btnNowy = new System.Windows.Forms.Button();
             this.btnPodglad = new System.Windows.Forms.Button();
+            this.btnGenerujPDF = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblRaport
@@ -102,11 +103,22 @@
             this.btnPodglad.UseVisualStyleBackColor = true;
             this.btnPodglad.Click += new System.EventHandler(this.btnPodglad_Click);
             // 
+            // btnGenerujPDF
+            // 
+            this.btnGenerujPDF.Location = new System.Drawing.Point(261, 149);
+            this.btnGenerujPDF.Name = "btnGenerujPDF";
+            this.btnGenerujPDF.Size = new System.Drawing.Size(75, 23);
+            this.btnGenerujPDF.TabIndex = 11;
+            this.btnGenerujPDF.Text = "Raport PDF";
+            this.btnGenerujPDF.UseVisualStyleBackColor = true;
+            this.btnGenerujPDF.Click += new System.EventHandler(this.btnGenerujPDF_Click);
+            // 
             // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 283);
+            this.Controls.Add(this.btnGenerujPDF);
             this.Controls.Add(this.btnPodglad);
             this.Controls.Add(this.btnNowy);
             this.Controls.Add(this.btnSzczegoly);
@@ -130,6 +142,7 @@
         private System.Windows.Forms.Button btnSzczegoly;
         private System.Windows.Forms.Button btnNowy;
         private System.Windows.Forms.Button btnPodglad;
+        private System.Windows.Forms.Button btnGenerujPDF;
     }
 }
 

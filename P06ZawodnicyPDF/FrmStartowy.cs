@@ -68,5 +68,10 @@ namespace P06ZawodnicyPDF
             FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, this, TrybOkienka.Podglad, mz);
             frmSzczegoly.Show();
         }
+
+        private void btnGenerujPDF_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
