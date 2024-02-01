@@ -33,6 +33,7 @@
             this.cbKraje = new System.Windows.Forms.ComboBox();
             this.lbDane = new System.Windows.Forms.ListBox();
             this.btnSzczegoly = new System.Windows.Forms.Button();
+            this.btnNowy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblRaport
@@ -80,11 +81,22 @@
             this.btnSzczegoly.UseVisualStyleBackColor = true;
             this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
             // 
+            // btnNowy
+            // 
+            this.btnNowy.Location = new System.Drawing.Point(264, 88);
+            this.btnNowy.Name = "btnNowy";
+            this.btnNowy.Size = new System.Drawing.Size(75, 23);
+            this.btnNowy.TabIndex = 9;
+            this.btnNowy.Text = "Nowy";
+            this.btnNowy.UseVisualStyleBackColor = true;
+            this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
+            // 
             // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 322);
+            this.ClientSize = new System.Drawing.Size(359, 322);
+            this.Controls.Add(this.btnNowy);
             this.Controls.Add(this.btnSzczegoly);
             this.Controls.Add(this.lblRaport);
             this.Controls.Add(this.label1);
@@ -104,6 +116,7 @@
         private System.Windows.Forms.ComboBox cbKraje;
         private System.Windows.Forms.ListBox lbDane;
         private System.Windows.Forms.Button btnSzczegoly;
+        private System.Windows.Forms.Button btnNowy;
     }
 }
 

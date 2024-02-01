@@ -43,7 +43,7 @@ namespace P03ZawodnicyCRUD
         private void btnSzczegoly_Click(object sender, EventArgs e)
         {
             Zawodnik zawodnik = (Zawodnik)lbDane.SelectedItem;
-            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, this); 
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, this, TrybOkienka.Edycja,mz); 
             frmSzczegoly.Show();
 
 
@@ -54,6 +54,10 @@ namespace P03ZawodnicyCRUD
             mz.Zapisz();
         }
 
-      
+        private void btnNowy_Click(object sender, EventArgs e)
+        {
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(this, TrybOkienka.Dodwanie,mz);
+            frmSzczegoly.Show();
+        }
     }
 }

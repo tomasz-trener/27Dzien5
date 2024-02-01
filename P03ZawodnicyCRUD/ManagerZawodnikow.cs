@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace P03ZawodnicyCRUD
 {
-    internal class ManagerZawodnikow
+    public class ManagerZawodnikow
     {
-        private Zawodnik[] zawodnicyCache;
+        private List<Zawodnik> zawodnicyCache;
         const string url = @"C:\dane\zawodnicy.txt";
 
         public Zawodnik[] WczytajZawodnikow()
@@ -44,7 +44,7 @@ namespace P03ZawodnicyCRUD
 
                 zawodnicy[i - 1] = z;
             }
-            zawodnicyCache = zawodnicy;
+            zawodnicyCache = zawodnicy.ToList();
             return zawodnicy;
         }
 
@@ -54,7 +54,7 @@ namespace P03ZawodnicyCRUD
             // unikam ponownego wczytania danych dzieki zastosowaniu cache'u
             // Zawodnik[] zawodnicy = WczytajZawodnikow();
 
-            Zawodnik[] zawodnicy = zawodnicyCache;
+            Zawodnik[] zawodnicy = zawodnicyCache.ToArray();
 
             if (zawodnicyCache == null)
                 throw new Exception("Najpierw wczytaj zawodnikow");
@@ -126,6 +126,18 @@ namespace P03ZawodnicyCRUD
                 sb.AppendLine(wiersz);
             }
             File.WriteAllText(url, sb.ToString(), Encoding.UTF8);
+        }
+
+        public void Dodaj(Zawodnik zawodnik)
+        {
+            int maksId = 0;
+            foreach (var z in zawodnicyCache)
+                if(z.Id_zawodnika > maksId)
+                    maksId = z.Id_zawodnika;
+
+            zawodnik.Id_zawodnika = maksId + 1;
+            zawodnicyCache.Add(zawodnik);
+
         }
     }
 }

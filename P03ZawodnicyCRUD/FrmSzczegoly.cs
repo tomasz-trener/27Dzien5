@@ -10,14 +10,31 @@ using System.Windows.Forms;
 
 namespace P03ZawodnicyCRUD
 {
+    public enum TrybOkienka
+    {
+        Dodwanie,
+        Edycja,
+        Podglad
+    }
+
     public partial class FrmSzczegoly : Form
     {
         private Zawodnik wyswietlany;
         private readonly FrmStartowy frmStartowy;
-        public FrmSzczegoly(Zawodnik zawodnik, FrmStartowy frmStartowy)
+        private readonly TrybOkienka trybOkienka;
+        private readonly ManagerZawodnikow mz;
+
+        public FrmSzczegoly(FrmStartowy frmStartowy, TrybOkienka trybOkienka, ManagerZawodnikow mz)
         {
             InitializeComponent();
+            this.frmStartowy = frmStartowy;
+            this.trybOkienka = trybOkienka;
+            this.mz = mz;
+        }
 
+        public FrmSzczegoly(Zawodnik zawodnik, FrmStartowy frmStartowy, TrybOkienka trybOkienka, ManagerZawodnikow mz) : this(frmStartowy, trybOkienka,mz)
+        {
+          
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
             txtKraj.Text = zawodnik.Kraj;
@@ -26,17 +43,27 @@ namespace P03ZawodnicyCRUD
             numWaga.Value = zawodnik.Waga;
 
             wyswietlany = zawodnik;
-            this.frmStartowy = frmStartowy;
+            
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
-            zczytajDaneZKontrolek();
-            frmStartowy.Zapisz();
+            if (trybOkienka == TrybOkienka.Edycja)
+            {
+                zczytajDaneZKontrolek();
+                frmStartowy.Zapisz();    
+            }
+            else if (trybOkienka== TrybOkienka.Dodwanie)
+            {
+                wyswietlany = new Zawodnik();
+                zczytajDaneZKontrolek();
+                mz.Dodaj(wyswietlany);
+                frmStartowy.Zapisz();
+            }
+
+
             this.Close();
-
             frmStartowy.Odswiez();
-
 
         }
 
