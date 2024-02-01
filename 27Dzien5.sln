@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01NoweOkna", "P01NoweOkna\P01NoweOkna.csproj", "{1A422512-5EA8-437C-8879-D7B3B7E1C602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02ZawodnicyNoweOkna", "P02ZawodnicyNoweOkna\P02ZawodnicyNoweOkna.csproj", "{FDD8D557-1054-4959-8262-91278E781B1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A422512-5EA8-437C-8879-D7B3B7E1C602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A422512-5EA8-437C-8879-D7B3B7E1C602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A422512-5EA8-437C-8879-D7B3B7E1C602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A422512-5EA8-437C-8879-D7B3B7E1C602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD8D557-1054-4959-8262-91278E781B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD8D557-1054-4959-8262-91278E781B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD8D557-1054-4959-8262-91278E781B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD8D557-1054-4959-8262-91278E781B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48550B38-0A81-4270-B963-17E8680A7218}
+	EndGlobalSection
+EndGlobal
