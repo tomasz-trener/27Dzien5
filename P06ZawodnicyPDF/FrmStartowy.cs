@@ -74,14 +74,26 @@ namespace P06ZawodnicyPDF
         {
             Zawodnik[] zawodnicy = (Zawodnik[])lbDane.DataSource;
 
-            if (zawodnicy == null || zawodnicy.Length ==0)
+            if (zawodnicy == null || zawodnicy.Length == 0)
             {
                 MessageBox.Show("Pusty zbiór danych", "Ostrzeżenie", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
-            PDFManager pm = new PDFManager(@"c:\dane\zawodnicy.pdf");
-            pm.WygenerujPDF(zawodnicy);
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Pliki pdf (*.pdf)|*.pdf";
+            sfd.Title = "Wskaż miejsce zapisu raportu PDF";
+            sfd.InitialDirectory = "C:\\dane";
+            sfd.FileName = cbKraje.Text + "_" + DateTime.Now.ToString("ssmmhhddMMyy");
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                PDFManager pm = new PDFManager(sfd.FileName);
+                pm.WygenerujPDF(zawodnicy);
+                wbPrzegladarka.Navigate(sfd.FileName);
+            }
+
+         
         }
     }
 }

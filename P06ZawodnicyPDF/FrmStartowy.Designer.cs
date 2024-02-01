@@ -36,6 +36,7 @@
             this.btnNowy = new System.Windows.Forms.Button();
             this.btnPodglad = new System.Windows.Forms.Button();
             this.btnGenerujPDF = new System.Windows.Forms.Button();
+            this.wbPrzegladarka = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // lblRaport
@@ -113,11 +114,20 @@
             this.btnGenerujPDF.UseVisualStyleBackColor = true;
             this.btnGenerujPDF.Click += new System.EventHandler(this.btnGenerujPDF_Click);
             // 
+            // wbPrzegladarka
+            // 
+            this.wbPrzegladarka.Location = new System.Drawing.Point(351, 32);
+            this.wbPrzegladarka.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbPrzegladarka.Name = "wbPrzegladarka";
+            this.wbPrzegladarka.Size = new System.Drawing.Size(256, 213);
+            this.wbPrzegladarka.TabIndex = 12;
+            // 
             // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 283);
+            this.ClientSize = new System.Drawing.Size(625, 283);
+            this.Controls.Add(this.wbPrzegladarka);
             this.Controls.Add(this.btnGenerujPDF);
             this.Controls.Add(this.btnPodglad);
             this.Controls.Add(this.btnNowy);
@@ -143,6 +153,7 @@
         private System.Windows.Forms.Button btnNowy;
         private System.Windows.Forms.Button btnPodglad;
         private System.Windows.Forms.Button btnGenerujPDF;
+        private System.Windows.Forms.WebBrowser wbPrzegladarka;
     }
 }
 
