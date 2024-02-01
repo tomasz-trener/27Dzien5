@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P03ZawodnicyCRUD
+namespace P02ZawodnicyNoweOkna
 {
-    public class ManagerZawodnikow
+    internal class ManagerZawodnikow
     {
-        private List<Zawodnik> zawodnicyCache;
-        const string url = @"C:\dane\zawodnicy.txt";
-
+        private Zawodnik[] zawodnicyCache;
         public Zawodnik[] WczytajZawodnikow()
         {
-            // string url = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
-           
+            string url = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
 
             WebClient wc = new WebClient();
             string dane = wc.DownloadString(url);
@@ -44,7 +40,7 @@ namespace P03ZawodnicyCRUD
 
                 zawodnicy[i - 1] = z;
             }
-            zawodnicyCache = zawodnicy.ToList();
+            zawodnicyCache = zawodnicy;
             return zawodnicy;
         }
 
@@ -54,7 +50,7 @@ namespace P03ZawodnicyCRUD
             // unikam ponownego wczytania danych dzieki zastosowaniu cache'u
             // Zawodnik[] zawodnicy = WczytajZawodnikow();
 
-            Zawodnik[] zawodnicy = zawodnicyCache.ToArray();
+            Zawodnik[] zawodnicy = zawodnicyCache;
 
             if (zawodnicyCache == null)
                 throw new Exception("Najpierw wczytaj zawodnikow");
@@ -125,32 +121,7 @@ namespace P03ZawodnicyCRUD
                     z.Id_zawodnika, z.Id_trenera, z.Imie, z.Nazwisko, z.Kraj, z.DataUrodzenia.ToString("yyyy-MM-dd"), z.Wzrost, z.Waga);
                 sb.AppendLine(wiersz);
             }
-            File.WriteAllText(url, sb.ToString(), Encoding.UTF8);
-        }
-
-        public void Dodaj(Zawodnik zawodnik)
-        {
-            int maksId = 0;
-            foreach (var z in zawodnicyCache)
-                if(z.Id_zawodnika > maksId)
-                    maksId = z.Id_zawodnika;
-
-            zawodnik.Id_zawodnika = maksId + 1;
-            zawodnicyCache.Add(zawodnik);
-
-        }
-
-        public void Usun(int id)
-        {
-            Zawodnik zawodnikDoUsuniecia = null;
-            foreach (var z in zawodnicyCache)
-                if(z.Id_zawodnika == id)
-                {
-                    zawodnikDoUsuniecia = z;
-                    break;
-                }
-
-            zawodnicyCache.Remove(zawodnikDoUsuniecia);
+            File.WriteAllText(@"C:\dane\zawodnicy.txt",sb.ToString(), Encoding.UTF8);
         }
     }
 }

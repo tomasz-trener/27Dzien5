@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P03ZawodnicyCRUD
+namespace P06ZawodnicyPDF
 {
     public enum TrybOkienka
     {

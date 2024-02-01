@@ -1,6 +1,4 @@
-﻿using P04Zawodnicy.Shared.Domain;
-using P04Zawodnicy.Shared.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P03ZawodnicyCRUD
+namespace P02ZawodnicyNoweOkna
 {
     public partial class FrmStartowy : Form
     {
@@ -19,13 +17,10 @@ namespace P03ZawodnicyCRUD
         public FrmStartowy()
         {
             InitializeComponent();
-            Odswiez();
-        }
 
-        public void Odswiez()
-        {
             mz.WczytajZawodnikow();
             cbKraje.DataSource = mz.PodajKraje();
+
         }
 
         private void cbKraje_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,28 +40,15 @@ namespace P03ZawodnicyCRUD
         private void btnSzczegoly_Click(object sender, EventArgs e)
         {
             Zawodnik zawodnik = (Zawodnik)lbDane.SelectedItem;
-            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, this, TrybOkienka.Edycja,mz); 
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik); 
             frmSzczegoly.Show();
 
 
         }
 
-        public void Zapisz()
+        private void btnZapisz_Click(object sender, EventArgs e)
         {
             mz.Zapisz();
-        }
-
-        private void btnNowy_Click(object sender, EventArgs e)
-        {
-            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(this, TrybOkienka.Dodwanie,mz);
-            frmSzczegoly.Show();
-        }
-
-        private void btnPodglad_Click(object sender, EventArgs e)
-        {
-            Zawodnik zawodnik = (Zawodnik)lbDane.SelectedItem;
-            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, this, TrybOkienka.Podglad, mz);
-            frmSzczegoly.Show();
         }
     }
 }
