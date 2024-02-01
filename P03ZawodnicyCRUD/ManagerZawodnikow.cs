@@ -139,5 +139,18 @@ namespace P03ZawodnicyCRUD
             zawodnicyCache.Add(zawodnik);
 
         }
+
+        public void Usun(int id)
+        {
+            Zawodnik zawodnikDoUsuniecia = null;
+            foreach (var z in zawodnicyCache)
+                if(z.Id_zawodnika == id)
+                {
+                    zawodnikDoUsuniecia = z;
+                    break;
+                }
+
+            zawodnicyCache.Remove(zawodnikDoUsuniecia);
+        }
     }
 }

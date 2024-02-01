@@ -30,6 +30,23 @@ namespace P03ZawodnicyCRUD
             this.frmStartowy = frmStartowy;
             this.trybOkienka = trybOkienka;
             this.mz = mz;
+
+            if(trybOkienka != TrybOkienka.Edycja)
+                btnUsun.Visible = false;
+
+            if(trybOkienka == TrybOkienka.Podglad)
+            {
+                foreach (Control c in pnlKontrolkiDoEdycji.Controls)
+                {
+                    if(c is TextBox)
+                        ((TextBox)c).ReadOnly = true;
+                    if (c is NumericUpDown)
+                        ((NumericUpDown)c).ReadOnly = true;
+                    if (c is DateTimePicker)
+                        ((DateTimePicker)c).Enabled = false;
+                }
+                btnZapisz.Visible = false;
+            }
         }
 
         public FrmSzczegoly(Zawodnik zawodnik, FrmStartowy frmStartowy, TrybOkienka trybOkienka, ManagerZawodnikow mz) : this(frmStartowy, trybOkienka,mz)
@@ -43,6 +60,8 @@ namespace P03ZawodnicyCRUD
             numWaga.Value = zawodnik.Waga;
 
             wyswietlany = zawodnik;
+
+
             
         }
 
@@ -75,6 +94,20 @@ namespace P03ZawodnicyCRUD
             wyswietlany.DataUrodzenia = dtpDataUr.Value;
             wyswietlany.Waga = Convert.ToInt32(numWaga.Value);
             wyswietlany.Wzrost = Convert.ToInt32(numWaga.Value);
+        }
+
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show($"Czy napewno chcesz usunać zawodnika {wyswietlany.ImieNazwisko} ?", "Uusuwanie",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question );
+        
+            if( dr == DialogResult.Yes )
+            {
+                mz.Usun(wyswietlany.Id_zawodnika);
+                frmStartowy.Zapisz();
+                this.Close();
+                frmStartowy.Odswiez();
+            }
         }
     }
 }

@@ -34,12 +34,13 @@
             this.lbDane = new System.Windows.Forms.ListBox();
             this.btnSzczegoly = new System.Windows.Forms.Button();
             this.btnNowy = new System.Windows.Forms.Button();
+            this.btnPodglad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblRaport
             // 
             this.lblRaport.AutoSize = true;
-            this.lblRaport.Location = new System.Drawing.Point(13, 298);
+            this.lblRaport.Location = new System.Drawing.Point(13, 257);
             this.lblRaport.Name = "lblRaport";
             this.lblRaport.Size = new System.Drawing.Size(35, 13);
             this.lblRaport.TabIndex = 7;
@@ -66,16 +67,16 @@
             // lbDane
             // 
             this.lbDane.FormattingEnabled = true;
-            this.lbDane.Location = new System.Drawing.Point(16, 88);
+            this.lbDane.Location = new System.Drawing.Point(13, 59);
             this.lbDane.Name = "lbDane";
             this.lbDane.Size = new System.Drawing.Size(242, 186);
             this.lbDane.TabIndex = 4;
             // 
             // btnSzczegoly
             // 
-            this.btnSzczegoly.Location = new System.Drawing.Point(16, 59);
+            this.btnSzczegoly.Location = new System.Drawing.Point(261, 91);
             this.btnSzczegoly.Name = "btnSzczegoly";
-            this.btnSzczegoly.Size = new System.Drawing.Size(238, 23);
+            this.btnSzczegoly.Size = new System.Drawing.Size(75, 23);
             this.btnSzczegoly.TabIndex = 8;
             this.btnSzczegoly.Text = "Szczegóły";
             this.btnSzczegoly.UseVisualStyleBackColor = true;
@@ -83,7 +84,7 @@
             // 
             // btnNowy
             // 
-            this.btnNowy.Location = new System.Drawing.Point(264, 88);
+            this.btnNowy.Location = new System.Drawing.Point(261, 62);
             this.btnNowy.Name = "btnNowy";
             this.btnNowy.Size = new System.Drawing.Size(75, 23);
             this.btnNowy.TabIndex = 9;
@@ -91,11 +92,22 @@
             this.btnNowy.UseVisualStyleBackColor = true;
             this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
             // 
+            // btnPodglad
+            // 
+            this.btnPodglad.Location = new System.Drawing.Point(261, 120);
+            this.btnPodglad.Name = "btnPodglad";
+            this.btnPodglad.Size = new System.Drawing.Size(75, 23);
+            this.btnPodglad.TabIndex = 10;
+            this.btnPodglad.Text = "Podgląd";
+            this.btnPodglad.UseVisualStyleBackColor = true;
+            this.btnPodglad.Click += new System.EventHandler(this.btnPodglad_Click);
+            // 
             // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 322);
+            this.ClientSize = new System.Drawing.Size(348, 283);
+            this.Controls.Add(this.btnPodglad);
             this.Controls.Add(this.btnNowy);
             this.Controls.Add(this.btnSzczegoly);
             this.Controls.Add(this.lblRaport);
@@ -117,6 +129,7 @@
         private System.Windows.Forms.ListBox lbDane;
         private System.Windows.Forms.Button btnSzczegoly;
         private System.Windows.Forms.Button btnNowy;
+        private System.Windows.Forms.Button btnPodglad;
     }
 }
 
