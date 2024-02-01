@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P02ZawodnicyNoweOkna
+namespace P03ZawodnicyCRUD
 {
     public partial class FrmStartowy : Form
     {
@@ -17,10 +17,13 @@ namespace P02ZawodnicyNoweOkna
         public FrmStartowy()
         {
             InitializeComponent();
+            Odswiez();
+        }
 
+        public void Odswiez()
+        {
             mz.WczytajZawodnikow();
             cbKraje.DataSource = mz.PodajKraje();
-
         }
 
         private void cbKraje_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,15 +43,17 @@ namespace P02ZawodnicyNoweOkna
         private void btnSzczegoly_Click(object sender, EventArgs e)
         {
             Zawodnik zawodnik = (Zawodnik)lbDane.SelectedItem;
-            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik); 
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, this); 
             frmSzczegoly.Show();
 
 
         }
 
-        private void btnZapisz_Click(object sender, EventArgs e)
+        public void Zapisz()
         {
             mz.Zapisz();
         }
+
+      
     }
 }

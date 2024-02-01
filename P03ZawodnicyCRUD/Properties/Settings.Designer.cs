@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace P02ZawodnicyNoweOkna.Properties
+namespace P03ZawodnicyCRUD.Properties
 {
 
 

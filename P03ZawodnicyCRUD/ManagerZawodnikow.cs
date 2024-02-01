@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P02ZawodnicyNoweOkna
+namespace P03ZawodnicyCRUD
 {
     internal class ManagerZawodnikow
     {
         private Zawodnik[] zawodnicyCache;
+        const string url = @"C:\dane\zawodnicy.txt";
+
         public Zawodnik[] WczytajZawodnikow()
         {
-            string url = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
+            // string url = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
+           
 
             WebClient wc = new WebClient();
             string dane = wc.DownloadString(url);
@@ -121,7 +125,7 @@ namespace P02ZawodnicyNoweOkna
                     z.Id_zawodnika, z.Id_trenera, z.Imie, z.Nazwisko, z.Kraj, z.DataUrodzenia.ToString("yyyy-MM-dd"), z.Wzrost, z.Waga);
                 sb.AppendLine(wiersz);
             }
-            File.WriteAllText(@"C:\dane\zawodnicy.txt",sb.ToString(), Encoding.UTF8);
+            File.WriteAllText(url, sb.ToString(), Encoding.UTF8);
         }
     }
 }

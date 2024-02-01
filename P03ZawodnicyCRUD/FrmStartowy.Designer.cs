@@ -1,4 +1,4 @@
-﻿namespace P02ZawodnicyNoweOkna
+﻿namespace P03ZawodnicyCRUD
 {
     partial class FrmStartowy
     {
@@ -33,7 +33,6 @@
             this.cbKraje = new System.Windows.Forms.ComboBox();
             this.lbDane = new System.Windows.Forms.ListBox();
             this.btnSzczegoly = new System.Windows.Forms.Button();
-            this.btnZapisz = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblRaport
@@ -81,22 +80,11 @@
             this.btnSzczegoly.UseVisualStyleBackColor = true;
             this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
             // 
-            // btnZapisz
-            // 
-            this.btnZapisz.Location = new System.Drawing.Point(264, 88);
-            this.btnZapisz.Name = "btnZapisz";
-            this.btnZapisz.Size = new System.Drawing.Size(97, 23);
-            this.btnZapisz.TabIndex = 9;
-            this.btnZapisz.Text = "Zapisz";
-            this.btnZapisz.UseVisualStyleBackColor = true;
-            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
-            // 
             // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 322);
-            this.Controls.Add(this.btnZapisz);
             this.Controls.Add(this.btnSzczegoly);
             this.Controls.Add(this.lblRaport);
             this.Controls.Add(this.label1);
@@ -116,7 +104,6 @@
         private System.Windows.Forms.ComboBox cbKraje;
         private System.Windows.Forms.ListBox lbDane;
         private System.Windows.Forms.Button btnSzczegoly;
-        private System.Windows.Forms.Button btnZapisz;
     }
 }
 
