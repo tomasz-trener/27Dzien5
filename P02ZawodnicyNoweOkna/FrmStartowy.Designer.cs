@@ -1,6 +1,6 @@
 ﻿namespace P02ZawodnicyNoweOkna
 {
-    partial class Form1
+    partial class FrmStartowy
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbKraje = new System.Windows.Forms.ComboBox();
             this.lbDane = new System.Windows.Forms.ListBox();
+            this.btnSzczegoly = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblRaport
@@ -64,21 +65,32 @@
             // lbDane
             // 
             this.lbDane.FormattingEnabled = true;
-            this.lbDane.Location = new System.Drawing.Point(12, 59);
+            this.lbDane.Location = new System.Drawing.Point(16, 88);
             this.lbDane.Name = "lbDane";
-            this.lbDane.Size = new System.Drawing.Size(242, 225);
+            this.lbDane.Size = new System.Drawing.Size(242, 186);
             this.lbDane.TabIndex = 4;
             // 
-            // Form1
+            // btnSzczegoly
+            // 
+            this.btnSzczegoly.Location = new System.Drawing.Point(16, 59);
+            this.btnSzczegoly.Name = "btnSzczegoly";
+            this.btnSzczegoly.Size = new System.Drawing.Size(238, 23);
+            this.btnSzczegoly.TabIndex = 8;
+            this.btnSzczegoly.Text = "Szczegóły";
+            this.btnSzczegoly.UseVisualStyleBackColor = true;
+            this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
+            // 
+            // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 332);
+            this.ClientSize = new System.Drawing.Size(284, 322);
+            this.Controls.Add(this.btnSzczegoly);
             this.Controls.Add(this.lblRaport);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbKraje);
             this.Controls.Add(this.lbDane);
-            this.Name = "Form1";
+            this.Name = "FrmStartowy";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -91,6 +103,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbKraje;
         private System.Windows.Forms.ListBox lbDane;
+        private System.Windows.Forms.Button btnSzczegoly;
     }
 }
 

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace P02ZawodnicyNoweOkna
 {
-    public partial class Form1 : Form
+    public partial class FrmStartowy : Form
     {
         private readonly ManagerZawodnikow mz = new ManagerZawodnikow();
 
-        public Form1()
+        public FrmStartowy()
         {
             InitializeComponent();
 
@@ -35,6 +35,15 @@ namespace P02ZawodnicyNoweOkna
                 double wzrost = mz.PodajSredniWzrost(zaznaczonyKraj);
                 lblRaport.Text = string.Format("Średni wzrost: {0:0.00} cm", wzrost);
             }
+        }
+
+        private void btnSzczegoly_Click(object sender, EventArgs e)
+        {
+            Zawodnik zawodnik = (Zawodnik)lbDane.SelectedItem;
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik); 
+            frmSzczegoly.Show();
+
+
         }
     }
 }
